@@ -1,7 +1,96 @@
+:root{
+    --width:400px;
+    --height:150px;
+    --depth:200px;
+}
+
 .base-container{
     position: relative;
-    width: 100wp;
-    height: 100wp;
-    background-color: rgba(0, 255, 255, 0.671);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 255, 255, 0.144);
 
+}
+
+.box-side1{
+    left: calc(50% - var(--width) / 2);
+    top: calc(50% - var(--height) / 2);
+    position: absolute;
+    width: var(--width);
+    height: var(--height);
+    background-color: rgba(243, 19, 19, 0.829);
+    transform-style: preserve-3d;
+    transform: perspective(900px);
+    
+
+}
+
+/* .box-side6{
+    position: absolute;
+    width: var(--width);
+    height: var(--height);
+    background-color: rgba(243, 19, 19, 0.623); 
+} */
+
+.box-side2{
+    
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: var(--width);
+    height: var(--depth);
+    background-color: rgba(10, 225, 245, 0.623);
+    transform-origin: 0 0 0;
+    transform: rotate3d(1,0,0,270deg);
+  
+}
+
+ .box-side3{
+    position: absolute;
+    left: 0;
+    top:100%;
+    width: var(--width);
+    height: var(--depth);
+    background-color: rgba(10, 225, 245, 0.623); 
+    transform-origin: 0 0 0;
+    transform: rotate3d(1,0,0,270deg);
+    
+  
+}
+/*
+.box-side4{
+    position: absolute;
+    width: var(--depth);
+    height: var(--height);
+    background-color: rgba(204, 7, 253, 0.623);
+}
+
+.box-side5{
+    position: absolute;
+    width: var(--depth);
+    height: var(--height);
+    background-color: rgba(204, 7, 253, 0.623);
+}  */
+
+/* animatoin */
+
+@keyframes boxRotate{
+
+    0%{
+        transform: rotate3d(1,1,0,0deg);
+    }
+
+    100%{
+        transform: rotate3d(1,1,0,180deg);
+    }
+
+
+}
+
+.box-side1{
+    animation-name: boxRotate;
+    animation-duration: 5200ms;
+    animation-iteration-count: 5;
+    animation-timing-function: linear;
+  
 }
